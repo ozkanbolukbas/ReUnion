@@ -28,7 +28,6 @@ import com.safaorhan.reunion.model.User;
 public class ConversationAdapter extends FirestoreRecyclerAdapter<Conversation, ConversationAdapter.ConversationHolder> {
     private static final String TAG = ConversationAdapter.class.getSimpleName();
     ConversationClickListener conversationClickListener;
-    public static String NAME=null;
 
     public ConversationAdapter(@NonNull FirestoreRecyclerOptions<Conversation> options) {
         super(options);

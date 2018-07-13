@@ -45,13 +45,15 @@ public class UsersActivity extends AppCompatActivity implements UserAdapter.User
     }
 
     @Override
-    public void onUserClick(DocumentReference userRef) {
+    public void onUserClick(DocumentReference userRef, final String name) {
         FirestoreHelper.findOrCreateConversation(userRef, new FirestoreHelper.DocumentReferenceCallback() {
             @Override
             public void onCompleted(DocumentReference documentReference) {
                 String documentPath = documentReference.getPath();
+                String userName = name;
                 Intent intent = new Intent(UsersActivity.this, ChatActivity.class);
                 intent.putExtra("documentPath", documentPath);
+                intent.putExtra("name", userName);
                 startActivity(intent);
                 finish();
             }
