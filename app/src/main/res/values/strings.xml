@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">ReUnion</string>
     <string name="menu_people">People</string>
-    <string name="chat_with">Chat With</string>
+    <string name="chat_with">Chat with</string>
     <string name="conversation_name">Conversations</string>
     <string name="people_name">People</string>
+    <string name="menu_logout">Log Out</string>
 </resources>

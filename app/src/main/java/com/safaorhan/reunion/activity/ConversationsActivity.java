@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.safaorhan.reunion.R;
 import com.safaorhan.reunion.adapter.ConversationAdapter;
@@ -71,6 +72,12 @@ public class ConversationsActivity extends AppCompatActivity implements Conversa
             case R.id.menu_people:
                 Intent intent = new Intent(this, UsersActivity.class);
                 startActivity(intent);
+                return true;
+            case R.id.menu_logout:
+                FirebaseAuth.getInstance().signOut();
+                Intent intentLogin = new Intent(this, LoginActivity.class);
+                startActivity(intentLogin);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
